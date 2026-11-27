@@ -1,6 +1,6 @@
 # @sh-webplatform/icons
 
-SVG icon library for sh-webplatform. Architecture follows [Tap30/icons](https://github.com/Tap30/icons): source SVGs → generate Lit `sh-icon-*` components + a named registry for `wk-icon`.
+SVG icon library for sh-webplatform. source SVGs → generate Lit `sh-icon-*` components + a named registry for `wk-icon`.
 
 ## Usage
 
