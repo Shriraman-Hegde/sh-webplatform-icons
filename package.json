@@ -1,0 +1,53 @@
+{
+  "name": "@sh-webplatform/icons",
+  "version": "0.1.0",
+  "description": "SVG icon library for sh-webplatform (Lit web components)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "./src/icons/**/*.ts",
+    "./dist/icons/**/*.js"
+  ],
+  "scripts": {
+    "pre-build": "node scripts/generateConfigFile.js && node scripts/generateWebComponents.js",
+    "build": "pnpm pre-build && rimraf dist && tsc -p tsconfig.json",
+    "test": "web-test-runner --config web-test-runner.config.mjs",
+    "storybook": "storybook dev -p 6007",
+    "build-storybook": "storybook build -o storybook-static",
+    "lint": "eslint ."
+  },
+  "peerDependencies": {
+    "lit": "^3.2.0"
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^5.0.0",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/web-components": "^8.4.7",
+    "@storybook/web-components-vite": "^8.4.7",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.1",
+    "@web/dev-server-esbuild": "^2.0.1",
+    "@web/test-runner": "^1.0.1",
+    "@web/test-runner-playwright": "^1.0.2",
+    "lit": "^3.2.1",
+    "playwright": "^1.65.1",
+    "rimraf": "^6.1.4",
+    "storybook": "^8.4.7",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
